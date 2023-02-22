@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold),
             ),
           ),
-          const Expanded(child: Tasks())
+         Expanded(child: Tasks())
         ],
       ),
     );

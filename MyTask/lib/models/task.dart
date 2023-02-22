@@ -19,7 +19,7 @@ static List<Task> generateTasks() {
   return [
 Task(
   iconData: Icons.person_rounded,
-  title: 'to do something programmation ...',
+  title: 'to do some programmation ...',
   type: 'Elevé',
   bgColor: kRedLight,
   iconColor: kRedDark,
@@ -28,15 +28,25 @@ Task(
   trash: 3,
   ),
   Task(
-    iconData: Icons.person_rounded,
-    title: 'to do something laundry ...',
+    iconData: Icons.cases_rounded,
+    title: 'to do some laundry ...',
     type: 'Normal',
     bgColor: kYellowLight,
     iconColor: kYellowDark,
     btnColor: kYellow,
     done: 2,
     trash: 1,
-    )
+    ),
+    Task(iconData: Icons.favorite_rounded,
+     title: 'to do some Research ...',
+     type: 'Moyen',
+     bgColor: kRedLight,
+     iconColor: kRedDark,
+     btnColor: kRed,
+     done: 0,
+     trash: 2,
+    ),
+    Task(isLast: true )
 ];
 }
 
