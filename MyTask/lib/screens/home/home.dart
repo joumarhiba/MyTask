@@ -18,13 +18,58 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(15),
             child: const Text(
               'Tasks',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
           ),
-         Expanded(child: Tasks())
+          Expanded(child: Tasks())
         ],
+      ),
+      bottomNavigationBar: _buildBottomNav(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        elevation: 0,
+        backgroundColor: Colors.black,
+        onPressed: () {},
+        child: const Icon(Icons.add, size: 35),
+      ),
+    );
+  }
+
+  Widget _buildBottomNav() {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 5,
+                blurRadius: 10)
+          ]),
+      child: ClipRRect(
+        borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+        child: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedItemColor: Colors.blueAccent,
+          items: const [
+            BottomNavigationBarItem(
+                label: 'Home',
+                icon: Icon(
+                  Icons.home_rounded,
+                  size: 30,
+                )),
+            BottomNavigationBarItem(
+                label: 'Person',
+                icon: Icon(
+                  Icons.person_rounded,
+                  size: 30,
+                ))
+          ],
+        ),
       ),
     );
   }
